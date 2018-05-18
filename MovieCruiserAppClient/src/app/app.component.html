@@ -1,0 +1,39 @@
+<h3>{{title}}</h3>
+<div class="header">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row class="header-row">
+      <span class="header-title">{{title}}</span>
+      <span class="search-spacer"></span>
+      <span class="header-title">Hello {{authService.userId}} !
+      <button mat-raised-button color="primary" *ngIf="!authService.isLoggedIn()" [routerLink]="['/auth/login']">Sign In</button>
+      <button mat-raised-button color="primary" *ngIf="!authService.isLoggedIn()" [routerLink]="['/auth/register']">Sign Up</button>
+      <button mat-raised-button color="primary" *ngIf="authService.isLoggedIn()" (click)="logout()">Logout</button>
+    </span>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="header-row"> 
+      <mat-button-toggle-group #group="matButtonToggleGroup">
+        <mat-button-toggle [routerLink]="['/movies/popular']">
+          Popular
+        </mat-button-toggle>
+        <mat-button-toggle [routerLink]="['/movies/top_rated']">
+          Top Rated
+        </mat-button-toggle>
+        <mat-button-toggle [routerLink]="['/movies/search']">
+          Search
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <span class="search-spacer"></span>
+      <button mat-raised-button color="primary" [routerLink]="['/movies/watchlist']">My WatchList</button>
+      </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<app-alert></app-alert>
+<router-outlet></router-outlet>
+
+
+<!-- <button mat-button [routerLink]="['/movies/popular']">Popular</button>
+    <button mat-button [routerLink]="['/movies/top_rated']">Top Rated</button>
+    <button mat-button [routerLink]="['/movies/watchlist']">Watchlist</button>
+    <span class="search-spacer"></span>
+    <button mat-button [routerLink]="['/movies/watsearchchlist']">Search</button> -->

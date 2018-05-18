@@ -1,0 +1,22 @@
+.login-block {
+    margin: auto;
+    width: 60%;
+    padding: 10 px;
+    padding-top: 50 px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+    
+}
+
+  
+.login-input-full-width {
+    width:100%
+}
+
+h3 {
+  text-align: center;
+}
+

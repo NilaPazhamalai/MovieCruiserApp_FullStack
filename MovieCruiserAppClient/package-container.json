@@ -1,0 +1,16 @@
+{
+  "name": "movie-cruiser-app-client",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "karma.conf.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"No test specified\" && exit 1"
+  },
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+  }
+}

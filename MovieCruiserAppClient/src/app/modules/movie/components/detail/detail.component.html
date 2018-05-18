@@ -1,0 +1,70 @@
+<!-- <movie-thumbnail [movie]="movie"></movie-thumbnail> -->
+<button mat-raised-button color="primary" (click)="goBack()">Back</button>
+<mat-icon>back</mat-icon>
+
+<div *ngIf="movieDetail" class="detail-container">
+  <div class="detail-column-spacer">
+  </div>
+  <div class="detail-column">
+    <img class="movie-image" src="{{movieDetail?.poster_path}}" alt="{{movieDetail?.title}}">
+  </div>
+  <div class="detail-column-spacer">
+  </div>
+  <div class="detail-column-section">
+    <div class="detail-section">
+      <h1>{{movieDetail?.title}}</h1>
+      <h3>Release Date : {{movieDetail?.release_date}}</h3>
+      <!--  </div>
+    <div class="detail-section"> -->
+      <h2>Overview</h2>
+      <p class="movie-overview">
+        {{movieDetail?.overview}}
+      </p>
+      <button *ngIf="useWatchlistApi && authService.isLoggedIn()" mat-raised-button color="primary" (click)="deleteFromWatchList()">Delete from Watchlist</button>
+      <button *ngIf="!useWatchlistApi && authService.isLoggedIn()" mat-raised-button color="primary" (click)="addToWatchList()">Add to Watchlist</button>
+      <!-- </div> -->
+      <div class="detail-section" *ngIf="useWatchlistApi">
+        <h2>Comments</h2>
+        <textarea rows="4" cols="35"  #comments>{{movieDetail?.comments}} </textarea>
+        <br>
+        <button mat-raised-button color="primary" (click)="saveComments(comments.value)">Add Comment</button>
+      </div>
+    </div>
+  </div>
+  <div class="detail-column-spacer">
+    </div>
+
+
+
+  <!-- 
+<div *ngIf="movieDetail">
+  <h1>{{movieDetail?.title}}</h1>
+  <h3>{{movieDetail?.release_date}}</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 image-title">
+        <img class="movie-image" src="{{movieDetail?.poster_path}}" alt="{{movieDetail?.title}}">
+      </div>
+      <div class="col-sm-6 overview">
+
+        <div class="overview-section">
+          <h2>Overview</h2>
+          <p class="movie-overview">
+            {{movieDetail?.overview}}
+          </p>
+
+          <button *ngIf="useWatchlistApi" mat-raised-button color="primary" (click)="deleteFromWatchList()">Delete from Watchlist</button>
+          <button *ngIf="!useWatchlistApi" mat-raised-button color="primary" (click)="addToWatchList()">Add to Watchlist</button>
+        </div>
+        <div class="comment-section" *ngIf="useWatchlistApi">
+          <h2>Comments</h2>
+          <textarea rows="4" cols="50" #comments>{{movieDetail?.comments}} </textarea>
+          <br>
+          <button mat-raised-button *ngIf="authService.isLoggedIn()" color="primary" (click)="saveComments(comments.value)">Add Comment</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div> -->

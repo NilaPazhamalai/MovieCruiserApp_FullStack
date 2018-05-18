@@ -1,0 +1,54 @@
+sudo docker ps
+sudo docker ps -a
+
+sudo docker logs dfgfgfg
+
+sudo docker images
+sudo docker image rm 34ee
+sudo docker image rm 14d1c1e2d9cf --force
+
+
+sudo docker start 34ss
+sudo docker stop 34ss
+sudo docker rm 34ss
+
+//sql
+sudo service mysql status
+- execution
+sudo docker exec -it 15ea7f987602 bash
+mysql -u app-root -p
+root1234
+show databases;
+use moviedb;
+select * ...
+
+
+// kill  process
+sudo lsof -i TCP:3306
+sudo kill p_id
+
+
+//build - with Dockerfile
+sudo docker build -t test-name-for-build .
+
+// run container
+sudo docker run --name test-spring-movie --network=host test-spring
+
+
+sudo docker run -d -p 3306:3306 --network=host --name=test-mysql-dock -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=moviedb -e MYSQL_USER=root mysql:latest
+
+sudo docker run -d -p 3306:3306 --network=host --name=test-mysql-dock -e MYSQL_ROOT_PASSWORD=root1234 -e MYSQL_DATABASE=moviedb -e MYSQL_USER=app-root -e MYSQL_PASSWORD=root1234 mysql:5.5
+
+
+sudo docker run -d -p 4200:4200 --network=host test-angular
+
+
+//login
+sudo docker login --username=vennila --password=Nila123
+
+
+
+//docker compose install
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose

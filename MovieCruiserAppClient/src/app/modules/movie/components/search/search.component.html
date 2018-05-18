@@ -1,0 +1,22 @@
+<!-- <div class="flex-container">
+    <div style="flex-grow: 12">
+        <input matInput placeholder="Search" #searchBox  (keyup)="searchKey$.next($event.target.value)">
+      </div> 
+      <div style="flex-grow: 1">
+          <mat-icon class="searchIcon" (click)="searchKey$.next(searchBox.value)">search</mat-icon>
+      </div>
+      
+  </div> -->
+  <div class="flex-container">
+      <form class="example-form">
+
+          <mat-form-field class="example-full-width">
+            <input style="width: 100%"  matInput placeholder="Search for movies....." #searchBox  (keyup)="searchKey$.next($event.target.value)">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+          
+        </form>
+  </div>
+
+  <div *ngIf="movies.length==0"> No movies found.....</div>
+  <movie-container [movies]="movies"></movie-container>
